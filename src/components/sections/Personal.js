@@ -48,7 +48,7 @@ export class Personal extends Component {
                         onChange={(e) => this.onChange(e)} 
                         type="text"
                         name="address"
-                        placeholder="Adress"
+                        placeholder="Address"
                     />
                     <Input
                         onChange={(e) => this.onChange(e)} 
