@@ -17,7 +17,7 @@ export class Personal extends Component {
 
     render() {
         return (
-            <div className="bg-zinc-200 m-5 p-5">
+            <div className=" m-5 p-5">
                 <h1>Personal Information</h1>
                 <div className="flex flex-col gap-2">
                     <Input
