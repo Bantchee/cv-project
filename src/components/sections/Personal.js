@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Input } from './utility/Input';
-import { TextArea } from './utility/TextArea';
+import { Input } from '../utility/Input';
+import { TextArea } from '../utility/TextArea';
 
-export class Text extends Component {
+export class Personal extends Component {
     constructor(props) {
         super(props);
 
