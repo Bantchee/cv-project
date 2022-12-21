@@ -5,9 +5,15 @@ export class Toggle extends React.Component {
         super(props);
     }
 
+    changeTheme(event) {
+        let root = document.querySelector('html');
+
+        (root.classList.contains('dark')) ? root.classList.remove("dark") : root.classList.add("dark");
+    }
+
     render() {
         return (
-            <button className="fixed top-0 right-0 mr-4 mt-4 bg-sky-400 p-3 hover:bg-sky-500 rounded-full">
+            <button onClick={this.changeTheme} className="fixed top-0 right-0 mr-4 mt-4 bg-sky-400 p-3 hover:bg-sky-500 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
                     <circle cx="12" cy="12" r="5" className="stroke-zinc-800"></circle>
                     <line x1="12" y1="1" x2="12" y2="3" className="stroke-zinc-800"></line>
