@@ -2,10 +2,6 @@ import React from 'react';
 import { Toggle } from './utility/Toggle.js'
 
 export class Header extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return (
             <div className='flex justify-center relative pt-4 pb-4'>

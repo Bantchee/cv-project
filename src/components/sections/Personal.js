@@ -3,14 +3,6 @@ import { Input } from '../utility/Input';
 import { TextArea } from '../utility/TextArea';
 
 export class Personal extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            text: props.value,
-        }
-    }
-
     onChange = (event) => {
         console.log(event.target.value);
     }

@@ -2,11 +2,7 @@ import React from 'react';
 import { Personal } from './sections/Personal.js'
 import { Button } from './utility/Button.js';
 
-export class Main extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+export class EditPage extends React.Component {
     render() {
         return (
             <div className="bg-zinc-200 mx-32">

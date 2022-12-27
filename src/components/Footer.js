@@ -1,10 +1,6 @@
 import React from "react";
 
 export class Footer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <footer className="dark:bg-zinc-50 bg-zinc-700 flex text-sky-500  dark:text-emerald-500  h-28 items-center justify-center text-4xl">

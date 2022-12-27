@@ -1,10 +1,6 @@
 import React from 'react'
 
 export class TextArea extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let { onChange, name, placeholder } = this.props;
         return (

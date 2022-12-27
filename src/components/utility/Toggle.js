@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export class Toggle extends React.Component {
     constructor(props) {

@@ -1,10 +1,6 @@
 import React from 'react'
 
 export class Input extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let { onChange, type, name, placeholder } = this.props;
         return (
