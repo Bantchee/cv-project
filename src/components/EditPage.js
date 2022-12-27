@@ -8,7 +8,7 @@ export class EditPage extends React.Component {
             <div className="bg-zinc-200 mx-32">
                 <Button value="Edit" className="w-24 text-zinc-800 bg-sky-500"/>
                 <Button value="Preview" className="w-24 text-zinc-800 bg-sky-400" />
-                <Personal />
+                <Personal onChange={this.props.onChange}/>
             </div>
         )
     }
