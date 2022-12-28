@@ -44,9 +44,9 @@ class App extends React.Component {
     return (
       <div className="text-xl bg-zinc-50 dark:bg-zinc-700 h-screen flex flex-col justify-between">
         <Header />
-        <div>
+        <div className=" mx-32 p-6 bg-zinc-200 text-zinc-900 dark:bg-zinc-600 dark:text-zinc-50">
           {(this.state.isEditPage) ? 
-            <Button value="Edit" className="w-24 text-zinc-800 bg-sky-500" onClick={(e) => {this.handleButtonClick(e)}}/> :
+            <Button value="Edit" className="w-24 mb-3 rounded-md text-zinc-900 bg-sky-500 hover:bg-sky-400 dark:text-zinc-50 dark:bg-emerald-500 dark:hover:bg-emerald-400" onClick={(e) => {this.handleButtonClick(e)}}/> :
             <Button value="Preview" className="w-24 text-zinc-800 bg-sky-400" onClick={(e) => {this.handleButtonClick(e)}}/>
           }
           

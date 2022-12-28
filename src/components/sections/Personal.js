@@ -5,7 +5,7 @@ import { TextArea } from '../utility/TextArea';
 export class Personal extends Component {
     render() {
         return (
-            <div className=" m-5 p-5">
+            <div>
                 <h1>Personal Information</h1>
                 <div className="flex flex-col gap-2">
                     <Input
