@@ -3,7 +3,6 @@ import { EditPage } from './components/EditPage.js';
 import { PreviewPage } from './components/PreviewPage.js';
 import { Header } from './components/Header.js';
 import { Footer } from './components/Footer.js';
-import { Button } from './components/utility/Button.js'
 
 class App extends React.Component {
   constructor(props) {
