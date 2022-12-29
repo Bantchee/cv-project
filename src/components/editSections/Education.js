@@ -6,7 +6,7 @@ export class Education extends React.Component {
     render() {
         return (
             <div className="flex flex-col gap-2">
-                <h1>Work Experience</h1>
+                <h1>Education</h1>
                 <School onChange={this.props.onChange}/>
                 <Button 
                     className="bg-green-500 rounded-md"

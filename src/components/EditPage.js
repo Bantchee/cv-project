@@ -1,6 +1,7 @@
 import React from 'react';
 import { Personal } from './editSections/Personal.js';
 import { Experience } from './editSections/Experience.js'
+import { Education } from './editSections/Education.js';
 
 export class EditPage extends React.Component {
     render() {
@@ -14,7 +15,8 @@ export class EditPage extends React.Component {
                 <Experience 
                     onChange={this.props.handleExperenceInputChange}
                     experience={this.props.experience}
-                 />
+                />
+                <Education />
             </div>
         )
     }
