@@ -13,6 +13,7 @@ export class EditPage extends React.Component {
                 />
                 <Experience 
                     onChange={this.props.handleExperienceInputChange}
+                    onClick={this.props.deleteCareer}
                     experience={this.props.experience}
                 />
                 <Education />

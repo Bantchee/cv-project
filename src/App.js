@@ -58,6 +58,16 @@ class App extends React.Component {
     });
   }
 
+  deleteCareer(index) {
+    console.log("hi", this.state.experience);
+    const experience = JSON.parse(JSON.stringify(this.state.experience));
+    const careers = experience.careers;
+    careers.splice(index, 1);
+    this.setState({
+      experience,
+    });
+  }
+
   handleButtonClick(e) {
     this.setState({
       isEditPage: !this.state.isEditPage,
@@ -73,11 +83,11 @@ class App extends React.Component {
             <Button value="Edit" className="w-24 mb-3 rounded-md text-zinc-900 bg-sky-500 hover:bg-sky-400 dark:text-zinc-50 dark:bg-emerald-500 dark:hover:bg-emerald-400" onClick={(e) => {this.handleButtonClick(e)}}/> :
             <Button value="Preview" className="w-24 text-zinc-800 bg-sky-400" onClick={(e) => {this.handleButtonClick(e)}}/>
           } */}
-          
 
           <EditPage 
             handlePersonalInputChange={(e) => this.handlePersonalInputChange(e)}
             handleExperienceInputChange={(e, index) => this.handleExperienceInputChange(e, index)}
+            deleteCareer={(index) => this.deleteCareer(index)}
             personal = {this.state.personal}
             experience = {this.state.experience}
           />

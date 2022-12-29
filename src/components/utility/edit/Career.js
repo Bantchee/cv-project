@@ -1,4 +1,3 @@
-import { Button } from "../Button"
 import { Input } from "../Input"
 import { TextArea } from "../TextArea"
 
@@ -49,10 +48,10 @@ export const Career = (props) => {
                 name="details"
                 placeholder="Details"
             />
-            <Button 
+            <button 
+                onClick={props.onClick}
                 className="bg-red-500 rounded-md"
-                value="Delete"
-            />
+            >Delete</button>
         </div>
     )
 }

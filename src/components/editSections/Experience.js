@@ -6,6 +6,7 @@ export class Experience extends React.Component {
     render() {
         return (
             <div className="flex flex-col gap-2">
+                <button onClick={() => this.props.onClick(0)}>Click me</button>
                 <h1>Work Experience</h1>
                 {
                     this.props.experience.careers.map((career, index) => {
@@ -13,6 +14,7 @@ export class Experience extends React.Component {
                             <Career
                                 key={index} 
                                 onChange={(e) => this.props.onChange(e, index)}
+                                onClick={() => this.props.onClick(index)}
                             />
                         )
                 })
