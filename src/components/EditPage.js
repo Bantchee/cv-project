@@ -12,7 +12,7 @@ export class EditPage extends React.Component {
                     personal = {this.props.personal}
                 />
                 <Experience 
-                    onChange={this.props.handleExperenceInputChange}
+                    onChange={this.props.handleExperienceInputChange}
                     experience={this.props.experience}
                 />
                 <Education />

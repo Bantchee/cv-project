@@ -52,12 +52,10 @@ class App extends React.Component {
     const experience = JSON.parse(JSON.stringify(this.state.experience));
     const careers = experience.careers;
     const career = careers[index];
-  
-
-    // career[key] = val;
-    // this.setState({
-    //   personal,
-    // });
+    career[key] = val;
+    this.setState({
+      experience,
+    });
   }
 
   handleButtonClick(e) {

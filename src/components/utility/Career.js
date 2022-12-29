@@ -12,37 +12,37 @@ export const Career = (props) => {
                 placeholder="Company"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="position"
                 placeholder="Position"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="city"
                 placeholder="City"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="state"
                 placeholder="State"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="from"
                 placeholder="From"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="to"
                 placeholder="To"
             />
             <TextArea 
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 name="details"
                 placeholder="Details"
             />

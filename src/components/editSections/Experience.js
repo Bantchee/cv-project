@@ -7,7 +7,9 @@ export class Experience extends React.Component {
         return (
             <div className="flex flex-col gap-2">
                 <h1>Work Experience</h1>
-                <Career onChange={this.props.onChange}/>
+
+                {/* Temp */}
+                <Career onChange={(e) => this.props.onChange(e, 0)}/>
                 <Button 
                     className="bg-green-500 rounded-md"
                     value="Add" 
