@@ -5,6 +5,7 @@ export class Personal extends React.Component {
         let {firstName, lastName, role, email, address, phoneNumber, description} = this.props;
         return (        
             <div className="">
+                <h1>Personal Information</h1>
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
                 <p>Role: {role}</p>
