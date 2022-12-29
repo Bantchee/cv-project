@@ -44,7 +44,7 @@ export const Career = (props) => {
             <TextArea 
                 onChange={(e) => this.props.onChange(e)}
                 name="details"
-                placeholder="details"
+                placeholder="Details"
             />
             <Button 
                 className="bg-red-500 rounded-md"
