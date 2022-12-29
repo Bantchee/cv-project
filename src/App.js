@@ -59,10 +59,27 @@ class App extends React.Component {
   }
 
   deleteCareer(index) {
-    console.log("hi", this.state.experience);
     const experience = JSON.parse(JSON.stringify(this.state.experience));
     const careers = experience.careers;
     careers.splice(index, 1);
+    this.setState({
+      experience,
+    });
+  }
+
+  addCareer() {
+    console.log('hi');
+    const experience = JSON.parse(JSON.stringify(this.state.experience));
+    const careers = experience.careers;
+    const career = {
+      company: "",
+      position: "",
+      city: "",
+      state: "",
+      from: "",
+      to: "",
+    };
+    careers.push(career);
     this.setState({
       experience,
     });
@@ -77,6 +94,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="text-xl bg-zinc-50 dark:bg-zinc-700 ">
+        
         <Header />
         <div className="flex justify-center gap-6 p-6">
           {/* {(this.state.isEditPage) ? 
@@ -88,6 +106,7 @@ class App extends React.Component {
             handlePersonalInputChange={(e) => this.handlePersonalInputChange(e)}
             handleExperienceInputChange={(e, index) => this.handleExperienceInputChange(e, index)}
             deleteCareer={(index) => this.deleteCareer(index)}
+            addCareer={() => this.addCareer()}
             personal = {this.state.personal}
             experience = {this.state.experience}
           />
