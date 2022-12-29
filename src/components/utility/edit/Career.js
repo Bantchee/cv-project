@@ -1,48 +1,51 @@
-import { Button } from "./Button"
-import { Input } from "./Input"
-import { TextArea } from "./TextArea"
+import { Button } from "../Button"
+import { Input } from "../Input"
+import { TextArea } from "../TextArea"
 
-export const School = (props) => {
+export const Career = (props) => {
     return (
-        <div className="flex flex-col gap-2">
+        <div 
+            id={props.id}
+            className="flex flex-col gap-2"
+        >
             <Input
                 onChange={(e) => props.onChange(e, 0)}
                 type="text"
-                name="certification"
-                placeholder="Certification / Degree / Program / Course"
+                name="company"
+                placeholder="Company"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
-                name="school"
-                placeholder="School"
+                name="position"
+                placeholder="Position"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="city"
                 placeholder="City"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="state"
                 placeholder="State"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="from"
                 placeholder="From"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="to"
                 placeholder="To"
             />
-            <TextArea
-                onChange={(e) => this.props.onChange(e)}
+            <TextArea 
+                onChange={(e) => props.onChange(e)}
                 name="details"
                 placeholder="Details"
             />

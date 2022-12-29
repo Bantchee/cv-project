@@ -1,15 +1,12 @@
+import { Career } from "../utility/preview/Career";
+
 export const Experience = (props) => {
     const renderCareer = (career, index) => {
         return(
-            <div key={index}>
-                <p>Company: {career.company}</p>
-                <p>Postion: {career.position}</p>
-                <p>City: {career.city}</p>
-                <p>State: {career.state}</p>
-                <p>From: {career.from}</p>
-                <p>To: {career.to}</p>
-                <p>Details: {career.details}</p>
-            </div>
+            <Career
+                key={index}
+                career={career}
+            />
         )
     };
 

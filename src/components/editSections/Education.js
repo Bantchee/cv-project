@@ -1,5 +1,5 @@
 import React from "react";
-import { School } from "../utility/School";
+import { School } from "../utility/edit/School";
 import { Button } from "../utility/Button";
 
 export class Education extends React.Component {
