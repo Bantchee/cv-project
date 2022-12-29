@@ -40,7 +40,7 @@ class App extends React.Component {
     const personal = JSON.parse(JSON.stringify(this.state.personal));
     personal[key] = val;
     this.setState({
-      personal: {},
+      personal,
     });
   }
 
@@ -52,8 +52,7 @@ class App extends React.Component {
     const experience = JSON.parse(JSON.stringify(this.state.experience));
     const careers = experience.careers;
     const career = careers[index];
-    
-    console.log(career);
+  
 
     // career[key] = val;
     // this.setState({
@@ -85,13 +84,8 @@ class App extends React.Component {
             experience = {this.state.experience}
           />
           <PreviewPage 
-            firstName={this.state.personal.firstName} 
-            lastName={this.state.personal.lastName} 
-            role={this.state.personal.role} 
-            email={this.state.personal.email} 
-            address={this.state.personal.address} 
-            phoneNumber={this.state.personal.phoneNumber}
-            description={this.state.personal.description}  
+            personal = {this.state.personal}
+            experience = {this.state.experience}
           />
         </div>
         <Footer />
