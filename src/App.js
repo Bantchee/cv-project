@@ -20,10 +20,22 @@ class App extends React.Component {
         phoneNumber: "",
         description: "",
       },
+      experience: {
+        careers: [
+          {
+            company: "",
+            position: "",
+            city: "",
+            state: "",
+            from: "",
+            to: "",
+          },
+        ],
+      },
     }
   }
 
-  handleInputChange(e) {
+  handlePersonalInputChange(e) {
     let key = e.target.name;
     let val = e.target.value;
     const personal = JSON.parse(JSON.stringify(this.state.personal));
@@ -31,6 +43,23 @@ class App extends React.Component {
     this.setState({
       personal,
     });
+  }
+
+  // Find out which careers index to access
+  // then everything is the same as handlePersonalInputChange(e);
+  handleExperienceInputChange(e, index) {
+    let key = e.target.name;
+    let val = e.target.value;
+    const experience = JSON.parse(JSON.stringify(this.state.experience));
+    const careers = experience.careers;
+    const career = careers[index];
+    
+    console.log(career);
+
+    // career[key] = val;
+    // this.setState({
+    //   personal,
+    // });
   }
 
   handleButtonClick(e) {
@@ -42,7 +71,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="text-xl bg-zinc-50 dark:bg-zinc-700 h-screen flex flex-col justify-between">
+      <div className="text-xl bg-zinc-50 dark:bg-zinc-700 flex flex-col justify-between">
         <Header />
         <div className=" mx-32 p-6 bg-zinc-200 text-zinc-900 dark:bg-zinc-600 dark:text-zinc-50">
           {(this.state.isEditPage) ? 
@@ -53,8 +82,10 @@ class App extends React.Component {
 
           {(this.state.isEditPage) ?
             <EditPage 
-              onChange={(e) => this.handleInputChange(e)} 
+              handlePersonalInputChange={(e) => this.handlePersonalInputChange(e)}
+              handleExperienceInputChange={(e, index) => this.handleExperienceInputChange(e, index)}
               personal = {this.state.personal}
+              experience = {this.state.experience}
             /> :
             <PreviewPage 
               firstName={this.state.personal.firstName} 
