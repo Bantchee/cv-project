@@ -41,7 +41,7 @@ class App extends React.Component {
     const personal = JSON.parse(JSON.stringify(this.state.personal));
     personal[key] = val;
     this.setState({
-      personal,
+      personal: {},
     });
   }
 
@@ -63,7 +63,6 @@ class App extends React.Component {
   }
 
   handleButtonClick(e) {
-    console.log("hi");
     this.setState({
       isEditPage: !this.state.isEditPage,
     });
@@ -71,32 +70,30 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="text-xl bg-zinc-50 dark:bg-zinc-700 flex flex-col justify-between">
+      <div className="text-xl bg-zinc-50 dark:bg-zinc-700 ">
         <Header />
-        <div className=" mx-32 p-6 bg-zinc-200 text-zinc-900 dark:bg-zinc-600 dark:text-zinc-50">
-          {(this.state.isEditPage) ? 
+        <div className="flex justify-center gap-6 p-6">
+          {/* {(this.state.isEditPage) ? 
             <Button value="Edit" className="w-24 mb-3 rounded-md text-zinc-900 bg-sky-500 hover:bg-sky-400 dark:text-zinc-50 dark:bg-emerald-500 dark:hover:bg-emerald-400" onClick={(e) => {this.handleButtonClick(e)}}/> :
             <Button value="Preview" className="w-24 text-zinc-800 bg-sky-400" onClick={(e) => {this.handleButtonClick(e)}}/>
-          }
+          } */}
           
 
-          {(this.state.isEditPage) ?
-            <EditPage 
-              handlePersonalInputChange={(e) => this.handlePersonalInputChange(e)}
-              handleExperienceInputChange={(e, index) => this.handleExperienceInputChange(e, index)}
-              personal = {this.state.personal}
-              experience = {this.state.experience}
-            /> :
-            <PreviewPage 
-              firstName={this.state.personal.firstName} 
-              lastName={this.state.personal.lastName} 
-              role={this.state.personal.role} 
-              email={this.state.personal.email} 
-              address={this.state.personal.address} 
-              phoneNumber={this.state.personal.phoneNumber}
-              description={this.state.personal.description}  
-            />
-          }
+          <EditPage 
+            handlePersonalInputChange={(e) => this.handlePersonalInputChange(e)}
+            handleExperienceInputChange={(e, index) => this.handleExperienceInputChange(e, index)}
+            personal = {this.state.personal}
+            experience = {this.state.experience}
+          />
+          <PreviewPage 
+            firstName={this.state.personal.firstName} 
+            lastName={this.state.personal.lastName} 
+            role={this.state.personal.role} 
+            email={this.state.personal.email} 
+            address={this.state.personal.address} 
+            phoneNumber={this.state.personal.phoneNumber}
+            description={this.state.personal.description}  
+          />
         </div>
         <Footer />
       </div>
