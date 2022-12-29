@@ -1,5 +1,6 @@
 import { Button } from "./Button"
 import { Input } from "./Input"
+import { TextArea } from "./TextArea"
 
 export const Career = (props) => {
     return (
@@ -19,8 +20,14 @@ export const Career = (props) => {
             <Input
                 onChange={(e) => this.props.onChange(e)}
                 type="text"
-                name="cityState"
-                placeholder="City, State"
+                name="city"
+                placeholder="City"
+            />
+            <Input
+                onChange={(e) => this.props.onChange(e)}
+                type="text"
+                name="state"
+                placeholder="State"
             />
             <Input
                 onChange={(e) => this.props.onChange(e)}
@@ -33,6 +40,11 @@ export const Career = (props) => {
                 type="text"
                 name="to"
                 placeholder="To"
+            />
+            <TextArea 
+                onChange={(e) => this.props.onChange(e)}
+                name="details"
+                placeholder="details"
             />
             <Button 
                 className="bg-red-500 rounded-md"
