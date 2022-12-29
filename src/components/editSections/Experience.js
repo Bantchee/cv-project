@@ -15,8 +15,8 @@ export class Experience extends React.Component {
                                 onClick={() => this.props.deleteCareer(index)}
                             />
                         )
-                })
-            }
+                    })
+                }
                 <button 
                     className="bg-green-500 rounded-md"
                     onClick={() => this.props.addCareer()}
