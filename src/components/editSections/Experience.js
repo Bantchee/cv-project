@@ -19,7 +19,7 @@ export class Experience extends React.Component {
                 }
                 <button 
                     className="bg-green-500 rounded-md"
-                    onClick={() => this.props.addCareer()}
+                    onClick={() => this.props.addOnClick()}
                 >Add</button>
             </div>
         );

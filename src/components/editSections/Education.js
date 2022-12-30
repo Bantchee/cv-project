@@ -19,7 +19,7 @@ export class Education extends React.Component {
                 }
                 <button 
                     className="bg-green-500 rounded-md"
-                    // onClick={() => this.props.addOnClick()}
+                    onClick={() => this.props.addOnClick()}
                 >Add</button>
             </div>
         );

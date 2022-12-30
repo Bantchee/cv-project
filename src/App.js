@@ -77,30 +77,6 @@ class App extends React.Component {
     }
   }
 
-  // handlePersonalInputChange(e) {
-  //   let key = e.target.name;
-  //   let val = e.target.value;
-  //   const personal = JSON.parse(JSON.stringify(this.state.personal));
-  //   personal[key] = val;
-  //   this.setState({
-  //     personal,
-  //   });
-  // }
-
-  // Find out which careers index to access
-  // then everything is the same as handlePersonalInputChange(e);
-  // handleExperienceInputChange(e, index) {
-  //   let key = e.target.name;
-  //   let val = e.target.value;
-  //   const experience = JSON.parse(JSON.stringify(this.state.experience));
-  //   const careers = experience.careers;
-  //   const career = careers[index];
-  //   career[key] = val;
-  //   this.setState({
-  //     experience,
-  //   });
-  // }
-
   deleteOnClick(section, index) {
     if(section === "experience") {
       const experience = JSON.parse(JSON.stringify(this.state.experience));
@@ -120,22 +96,39 @@ class App extends React.Component {
     }
   }
 
-  addCareer() {
-    console.log('hi');
-    const experience = JSON.parse(JSON.stringify(this.state.experience));
-    const careers = experience.careers;
-    const career = {
-      company: "",
-      position: "",
-      city: "",
-      state: "",
-      from: "",
-      to: "",
-    };
-    careers.push(career);
-    this.setState({
-      experience,
-    });
+  addOnClick(section) {
+    if(section === "experience") {
+      const experience = JSON.parse(JSON.stringify(this.state.experience));
+      const careers = experience.careers;
+      const career = {
+        company: "",
+        position: "",
+        city: "",
+        state: "",
+        from: "",
+        to: "",
+      };
+      careers.push(career);
+      this.setState({
+        experience,
+      });
+    }
+    else if(section === "education") {
+      const education = JSON.parse(JSON.stringify(this.state.education));
+      const schools = education.schools;
+      const school = {
+        certification: "",
+        school: "",
+        city: "",
+        state: "",
+        from: "",
+        to: "",
+      };
+      schools.push(school);
+      this.setState({
+        education,
+      });
+    }
   }
 
   handleButtonClick(e) {
@@ -158,7 +151,7 @@ class App extends React.Component {
           <EditPage 
             handleInputChange={(e, section, index) => this.handleInputChange(e, section, index)}
             deleteOnClick={(section, index) => this.deleteOnClick(section, index)}
-            addCareer={() => this.addCareer()}
+            addOnClick={(section) => this.addOnClick(section)}
             personal = {this.state.personal}
             experience = {this.state.experience}
             education={this.state.education}

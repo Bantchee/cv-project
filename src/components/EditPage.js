@@ -15,13 +15,13 @@ export class EditPage extends React.Component {
                 <Experience 
                     onChange={(e, index) => this.props.handleInputChange(e, "experience", index)}
                     deleteOnClick={(index) => this.props.deleteOnClick("experience", index)}
-                    addCareer={this.props.addCareer}
+                    addOnClick={() => this.props.addOnClick("experience")}
                     experience={this.props.experience}
                 />
                 <Education 
                     onChange={(e, index) => this.props.handleInputChange(e, "education", index)}
                     deleteOnClick={(index) => this.props.deleteOnClick("education", index)}
-                    // addCareer={this.props.addCareer}
+                    addOnClick={() => this.props.addOnClick("education")}
                     education={this.props.education}
                 />
             </div>
