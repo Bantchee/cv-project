@@ -46,10 +46,10 @@ export const School = (props) => {
                 name="details"
                 placeholder="Details"
             />
-            <Button 
+            <button 
+                onClick={props.onClick}
                 className="bg-red-500 rounded-md"
-                value="Delete"
-            />
+            >Delete</button>
         </div>
     )
 }

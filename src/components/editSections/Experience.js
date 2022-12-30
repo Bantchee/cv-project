@@ -12,7 +12,7 @@ export class Experience extends React.Component {
                             <Career
                                 key={index} 
                                 onChange={(e) => this.props.onChange(e, index)}
-                                onClick={() => this.props.deleteCareer(index)}
+                                onClick={() => this.props.deleteOnClick(index)}
                             />
                         )
                     })

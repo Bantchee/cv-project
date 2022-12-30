@@ -101,13 +101,23 @@ class App extends React.Component {
   //   });
   // }
 
-  deleteCareer(index) {
-    const experience = JSON.parse(JSON.stringify(this.state.experience));
-    const careers = experience.careers;
-    careers.splice(index, 1);
-    this.setState({
-      experience,
-    });
+  deleteOnClick(section, index) {
+    if(section === "experience") {
+      const experience = JSON.parse(JSON.stringify(this.state.experience));
+      const careers = experience.careers;
+      careers.splice(index, 1);
+      this.setState({
+        experience,
+      });
+    }
+    else if (section === "education") {
+      const education = JSON.parse(JSON.stringify(this.state.education));
+      const schools = education.schools;
+      schools.splice(index, 1);
+      this.setState({
+        education,
+      });
+    }
   }
 
   addCareer() {
@@ -147,7 +157,7 @@ class App extends React.Component {
 
           <EditPage 
             handleInputChange={(e, section, index) => this.handleInputChange(e, section, index)}
-            deleteCareer={(index) => this.deleteCareer(index)}
+            deleteOnClick={(section, index) => this.deleteOnClick(section, index)}
             addCareer={() => this.addCareer()}
             personal = {this.state.personal}
             experience = {this.state.experience}
