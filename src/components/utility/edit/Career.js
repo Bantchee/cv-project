@@ -8,7 +8,7 @@ export const Career = (props) => {
             className="flex flex-col gap-2"
         >
             <Input
-                onChange={(e) => props.onChange(e, 0)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="company"
                 placeholder="Company"
