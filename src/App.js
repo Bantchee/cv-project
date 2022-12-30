@@ -31,32 +31,75 @@ class App extends React.Component {
           },
         ],
       },
+      education: {
+        schools: [
+          {
+            certification: "",
+            school: "",
+            city: "",
+            state: "",
+            from: "",
+            to: "",
+          },
+        ],
+      },
     }
   }
 
-  handlePersonalInputChange(e) {
+  handleInputChange(e, section, index) {
     let key = e.target.name;
     let val = e.target.value;
-    const personal = JSON.parse(JSON.stringify(this.state.personal));
-    personal[key] = val;
-    this.setState({
-      personal,
-    });
+
+    if(section === "personal") {
+      const personal = JSON.parse(JSON.stringify(this.state.personal));
+      personal[key] = val;
+      this.setState({
+        personal,
+      });
+    }
+    else if(section === "experience"){
+      const experience = JSON.parse(JSON.stringify(this.state.experience));
+      const careers = experience.careers;
+      const career = careers[index];
+      career[key] = val;
+      this.setState({
+        experience,
+      });
+    }
+    else if(section === "education"){
+      const education = JSON.parse(JSON.stringify(this.state.education));
+      const schools = education.schools;
+      const school = schools[index];
+      school[key] = val;
+      this.setState({
+        education,
+      });
+    }
   }
+
+  // handlePersonalInputChange(e) {
+  //   let key = e.target.name;
+  //   let val = e.target.value;
+  //   const personal = JSON.parse(JSON.stringify(this.state.personal));
+  //   personal[key] = val;
+  //   this.setState({
+  //     personal,
+  //   });
+  // }
 
   // Find out which careers index to access
   // then everything is the same as handlePersonalInputChange(e);
-  handleExperienceInputChange(e, index) {
-    let key = e.target.name;
-    let val = e.target.value;
-    const experience = JSON.parse(JSON.stringify(this.state.experience));
-    const careers = experience.careers;
-    const career = careers[index];
-    career[key] = val;
-    this.setState({
-      experience,
-    });
-  }
+  // handleExperienceInputChange(e, index) {
+  //   let key = e.target.name;
+  //   let val = e.target.value;
+  //   const experience = JSON.parse(JSON.stringify(this.state.experience));
+  //   const careers = experience.careers;
+  //   const career = careers[index];
+  //   career[key] = val;
+  //   this.setState({
+  //     experience,
+  //   });
+  // }
 
   deleteCareer(index) {
     const experience = JSON.parse(JSON.stringify(this.state.experience));
@@ -103,16 +146,17 @@ class App extends React.Component {
           } */}
 
           <EditPage 
-            handlePersonalInputChange={(e) => this.handlePersonalInputChange(e)}
-            handleExperienceInputChange={(e, index) => this.handleExperienceInputChange(e, index)}
+            handleInputChange={(e, section, index) => this.handleInputChange(e, section, index)}
             deleteCareer={(index) => this.deleteCareer(index)}
             addCareer={() => this.addCareer()}
             personal = {this.state.personal}
             experience = {this.state.experience}
+            education={this.state.education}
           />
           <PreviewPage 
             personal = {this.state.personal}
             experience = {this.state.experience}
+            education={this.state.education}
           />
         </div>
         <Footer />

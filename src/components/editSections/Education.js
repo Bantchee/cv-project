@@ -7,7 +7,9 @@ export class Education extends React.Component {
         return (
             <div className="flex flex-col gap-2">
                 <h1>Education</h1>
-                <School onChange={this.props.onChange}/>
+                <School 
+                    onChange={(e) => this.props.onChange(e, 0)}
+                />
                 <Button 
                     className="bg-green-500 rounded-md"
                     value="Add" 

@@ -6,19 +6,19 @@ export const School = (props) => {
     return (
         <div className="flex flex-col gap-2">
             <Input
-                onChange={(e) => props.onChange(e, 0)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="certification"
                 placeholder="Certification / Degree / Program / Course"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="school"
                 placeholder="School"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="city"
                 placeholder="City"
@@ -30,19 +30,19 @@ export const School = (props) => {
                 placeholder="State"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="from"
                 placeholder="From"
             />
             <Input
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 type="text"
                 name="to"
                 placeholder="To"
             />
             <TextArea
-                onChange={(e) => this.props.onChange(e)}
+                onChange={(e) => props.onChange(e)}
                 name="details"
                 placeholder="Details"
             />

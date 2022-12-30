@@ -10,16 +10,21 @@ export class EditPage extends React.Component {
             <div className='flex-1 p-6 bg-zinc-200 text-zinc-900 dark:bg-zinc-600 dark:text-zinc-50 rounded-lg'>
                 
                 <Personal 
-                    onChange={this.props.handlePersonalInputChange}
+                    onChange={(e) => this.props.handleInputChange(e, "personal", null)}
                     personal = {this.props.personal}
                 />
                 <Experience 
-                    onChange={this.props.handleExperienceInputChange}
+                    onChange={(e, index) => this.props.handleInputChange(e, "experience", index)}
                     deleteCareer={this.props.deleteCareer}
                     addCareer={this.props.addCareer}
                     experience={this.props.experience}
                 />
-                <Education />
+                <Education 
+                    onChange={(e, index) => this.props.handleInputChange(e, "education", index)}
+                    // deleteCareer={this.props.deleteCareer}
+                    // addCareer={this.props.addCareer}
+                    education={this.props.education}
+                />
             </div>
         )
     }

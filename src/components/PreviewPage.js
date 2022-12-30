@@ -1,4 +1,5 @@
 import React from "react";
+import { Education } from "./previewSections/Education";
 import { Experience } from "./previewSections/Experience";
 import { Personal } from "./previewSections/Personal";
 
@@ -17,6 +18,9 @@ export class PreviewPage extends React.Component {
                 />
                 <Experience
                     careers={this.props.experience.careers}
+                />
+                <Education
+                    schools={this.props.education.schools}
                 />
             </div> 
         );
