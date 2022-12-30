@@ -143,12 +143,7 @@ class App extends React.Component {
         
         <Header />
         <div className="flex justify-center gap-6 p-6">
-          {/* {(this.state.isEditPage) ? 
-            <Button value="Edit" className="w-24 mb-3 rounded-md text-zinc-900 bg-sky-500 hover:bg-sky-400 dark:text-zinc-50 dark:bg-emerald-500 dark:hover:bg-emerald-400" onClick={(e) => {this.handleButtonClick(e)}}/> :
-            <Button value="Preview" className="w-24 text-zinc-800 bg-sky-400" onClick={(e) => {this.handleButtonClick(e)}}/>
-          } */}
-
-          <EditPage 
+         <EditPage 
             handleInputChange={(e, section, index) => this.handleInputChange(e, section, index)}
             deleteOnClick={(section, index) => this.deleteOnClick(section, index)}
             addOnClick={(section) => this.addOnClick(section)}
