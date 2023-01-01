@@ -142,7 +142,7 @@ class App extends React.Component {
       <div className="text-xl bg-zinc-50 dark:bg-zinc-700 ">
         
         <Header />
-        <div className="flex justify-center gap-6 p-6">
+        <div className="flex justify-center gap-6 pt-6 pb-6 pl-16 pr-16">
          <EditPage 
             handleInputChange={(e, section, index) => this.handleInputChange(e, section, index)}
             deleteOnClick={(section, index) => this.deleteOnClick(section, index)}
