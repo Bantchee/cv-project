@@ -48,7 +48,7 @@ export const School = (props) => {
             />
             <button 
                 onClick={props.onClick}
-                className="bg-red-500 rounded-md"
+                className="bg-red-500 rounded-md dark:text-zinc-50"
             >Delete</button>
         </div>
     )
