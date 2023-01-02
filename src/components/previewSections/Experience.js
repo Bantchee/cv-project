@@ -11,8 +11,14 @@ export const Experience = (props) => {
     };
 
     return (
-        <div>
-            <h1>Work Experience</h1>
+        <div
+            className="flex flex-col gap-4"
+        >
+            <h1
+                className="text-sky-500 dark:text-emerald-500 text-2xl"
+            >
+                Work Experience
+            </h1>
             {
                 props.careers.map((career, index) => {
                     return renderCareer(career, index);

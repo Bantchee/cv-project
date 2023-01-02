@@ -28,6 +28,7 @@ class App extends React.Component {
             state: "",
             from: "",
             to: "",
+            details: "",
           },
         ],
       },
@@ -107,6 +108,7 @@ class App extends React.Component {
         state: "",
         from: "",
         to: "",
+        details: "",
       };
       careers.push(career);
       this.setState({

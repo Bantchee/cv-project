@@ -1,13 +1,29 @@
 export const Career = (props) => {
+    let {company, position, city, state, from, to, details} = props.career;
     return (
-        <div>
-            <p>Company: {props.career.company}</p>
-            <p>Postion: {props.career.position}</p>
-            <p>City: {props.career.city}</p>
-            <p>State: {props.career.state}</p>
-            <p>From: {props.career.from}</p>
-            <p>To: {props.career.to}</p>
-            <p>Details: {props.career.details}</p>
+        <div
+            className="border-l-4 border-sky-500 dark:border-emerald-500 pl-4 ml-4 text-base rounded-md"
+        >
+            <p
+                className="text-xl font-bold"
+            >
+                {
+                    (company.trim() === "" ? "Company" : company) + " - " +
+                    (city.trim() === "" ? "City" : city) + ", " +
+                    (state.trim() === "" ? "State" : state)
+                }
+            </p>
+            <p
+                className="text-xl font-bold"
+            >
+                {position.trim() === "" ? "Position" : position}
+            </p>
+            <p> {
+                    (from.trim() === "" ? "From" : from) + " - " +
+                    (to.trim() === "" ? "To" : to)
+                }
+            </p>
+            <p>{details.trim() === "" ? "Details" : details}</p>
         </div>
     )
 }
