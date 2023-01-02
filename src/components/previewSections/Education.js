@@ -12,7 +12,11 @@ export const Education = (props) => {
 
     return (
         <div>
-            <h1>Education</h1>
+            <h1
+                className="text-sky-500 dark:text-emerald-500 text-2xl"
+            >
+                Education
+            </h1>
             {
                 props.schools.map((school, index) => {
                     return renderSchool(school, index);

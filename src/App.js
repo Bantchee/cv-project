@@ -41,6 +41,7 @@ class App extends React.Component {
             state: "",
             from: "",
             to: "",
+            details: "",
           },
         ],
       },
@@ -125,6 +126,7 @@ class App extends React.Component {
         state: "",
         from: "",
         to: "",
+        details: "",
       };
       schools.push(school);
       this.setState({
