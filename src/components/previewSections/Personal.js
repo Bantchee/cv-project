@@ -57,7 +57,7 @@ export class Personal extends React.Component {
                         </div>
                     </div>
                 </div> 
-                <hr className="h-1  mt-2 mb-2 bg-sky-500 dark:bg-emerald-500"></hr>
+                <hr className="h-1  mt-2 mb-2 bg-sky-500 dark:bg-emerald-500 text-sky-500 dark:text-emerald-500 border-none rounded-md"></hr>
                 <p>{description.trim() === "" ?
                     "Description" :
                     description}</p>
