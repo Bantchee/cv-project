@@ -7,7 +7,7 @@ export class Personal extends Component {
         return (
             <div>
                 <h1>Personal Information</h1>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 dark:text-zinc-900">
                     <Input
                         onChange={(e) => this.props.onChange(e)} 
                         type="text"

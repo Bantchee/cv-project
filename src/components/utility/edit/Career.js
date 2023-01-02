@@ -4,8 +4,7 @@ import { TextArea } from "../TextArea"
 export const Career = (props) => {
     return (
         <div 
-            id={props.id}
-            className="flex flex-col gap-2"
+            className="flex flex-col gap-2 dark:text-zinc-900"
         >
             <Input
                 onChange={(e) => props.onChange(e)}

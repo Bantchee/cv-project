@@ -3,7 +3,8 @@ import { TextArea } from "../TextArea"
 
 export const School = (props) => {
     return (
-        <div className="flex flex-col gap-2">
+        <div 
+            className="flex flex-col gap-2 dark:text-zinc-900">
             <Input
                 onChange={(e) => props.onChange(e)}
                 type="text"
