@@ -10,20 +10,30 @@ export class Personal extends React.Component {
                 <div className="flex justify-between">
                     <div>
                         <div className="flex gap-4 text-4xl text-sky-500 dark:text-emerald-500">
-                            <p>First Name: {firstName}</p>
-                            <p>Last Name: {lastName}</p>
+                            <p>{firstName.trim() === "" ?
+                                "First Name" :
+                                firstName}</p>
+                            <p>{lastName.trim() === "" ?
+                                "Last Name" :
+                                lastName}</p>
                             
                         </div>
-                        <p>Role: {role}</p>
+                        <p className="text-base">
+                            {role.trim() === "" ?
+                                "Role" :
+                                role}
+                        </p>
                     </div>
-                    <div>
+                    <div className="text-base">
                         <div 
                             className="flex gap-1 content-center"
                         >
                             <FontAwesomeIcon
                                 icon={faAt}
                             />
-                            <p>Email: {email}</p>
+                            <p>{email.trim() === "" ?
+                                "Email" :
+                                email}</p>
                         </div>
                         <div 
                             className="flex gap-1 content-center"
@@ -31,7 +41,9 @@ export class Personal extends React.Component {
                             <FontAwesomeIcon
                                 icon={faLocationDot}
                             />
-                            <p>Address: {address}</p>
+                            <p>{address.trim() === "" ?
+                                "Address" :
+                                address}</p>
                         </div>
                         <div 
                             className="flex gap-1 content-center"
@@ -39,11 +51,16 @@ export class Personal extends React.Component {
                             <FontAwesomeIcon
                                 icon={faPhone}
                             />
-                            <p>Phone Number: {phoneNumber}</p>
+                            <p>{phoneNumber.trim() === "" ?
+                                "Phone Number" :
+                                phoneNumber}</p>
                         </div>
                     </div>
                 </div> 
-                <p>Description: {description}</p>
+                <hr className="h-1  mt-2 mb-2 bg-sky-500 dark:bg-emerald-500"></hr>
+                <p>{description.trim() === "" ?
+                    "Description" :
+                    description}</p>
             </div>      
             
         );
