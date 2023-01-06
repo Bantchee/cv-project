@@ -46,6 +46,11 @@ class App extends React.Component {
         ],
       },
     }
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.deleteOnClick = this.deleteOnClick.bind(this);
+    this.addOnClick = this.addOnClick.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   handleInputChange(e, section, index) {
@@ -59,7 +64,7 @@ class App extends React.Component {
         personal,
       });
     }
-    else if(section === "experience"){
+    else if(section === "experience") {
       const experience = JSON.parse(JSON.stringify(this.state.experience));
       const careers = experience.careers;
       const career = careers[index];
