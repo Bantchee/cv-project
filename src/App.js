@@ -1,112 +1,98 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { EditPage } from './components/EditPage.js';
 import { PreviewPage } from './components/PreviewPage.js';
 import { Header } from './components/Header.js';
 import { Footer } from './components/Footer.js';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isEditPage: true,
-      personal: {
-        firstName: "",
-        lastName: "",
-        role: "",
-        email: "",
-        address: "",
-        phoneNumber: "",
-        description: "",
-      },
-      experience: {
-        careers: [
-          {
-            company: "",
-            position: "",
-            city: "",
-            state: "",
-            from: "",
-            to: "",
-            details: "",
-          },
-        ],
-      },
-      education: {
-        schools: [
-          {
-            certification: "",
-            school: "",
-            city: "",
-            state: "",
-            from: "",
-            to: "",
-            details: "",
-          },
-        ],
-      },
+const App = (props) => {
+  const [personal, setPersonal] = useState(
+    {
+      firstName: "",
+      lastName: "",
+      role: "",
+      email: "",
+      address: "",
+      phoneNumber: "",
+      description: "",
     }
+  );
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.deleteOnClick = this.deleteOnClick.bind(this);
-    this.addOnClick = this.addOnClick.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-  }
+  const [experience, setExperience] = useState(
+    {
+      careers: [
+        {
+          company: "",
+          position: "",
+          city: "",
+          state: "",
+          from: "",
+          to: "",
+          details: "",
+        },
+      ],
+    }
+  );
 
-  handleInputChange(e, section, index) {
+  const [education, setEducation] = useState(
+    {
+      schools: [
+        {
+          certification: "",
+          school: "",
+          city: "",
+          state: "",
+          from: "",
+          to: "",
+          details: "",
+        },
+      ],
+    }
+  );
+
+  const handleInputChange = (e, section, index) => {
     let key = e.target.name;
     let val = e.target.value;
 
     if(section === "personal") {
-      const personal = JSON.parse(JSON.stringify(this.state.personal));
-      personal[key] = val;
-      this.setState({
-        personal,
-      });
+      const per = JSON.parse(JSON.stringify(personal));
+      per[key] = val;
+      setPersonal(per);
     }
     else if(section === "experience") {
-      const experience = JSON.parse(JSON.stringify(this.state.experience));
-      const careers = experience.careers;
+      const exp = JSON.parse(JSON.stringify(experience));
+      const careers = exp.careers;
       const career = careers[index];
       career[key] = val;
-      this.setState({
-        experience,
-      });
+      setExperience(exp);
     }
     else if(section === "education"){
-      const education = JSON.parse(JSON.stringify(this.state.education));
-      const schools = education.schools;
+      const edu = JSON.parse(JSON.stringify(education));
+      const schools = edu.schools;
       const school = schools[index];
       school[key] = val;
-      this.setState({
-        education,
-      });
+      setEducation(edu);
     }
-  }
+  };
 
-  deleteOnClick(section, index) {
+  const deleteOnClick = (section, index) => {
     if(section === "experience") {
-      const experience = JSON.parse(JSON.stringify(this.state.experience));
-      const careers = experience.careers;
+      const exp = JSON.parse(JSON.stringify(experience));
+      const careers = exp.careers;
       careers.splice(index, 1);
-      this.setState({
-        experience,
-      });
+      setExperience(exp);
     }
     else if (section === "education") {
-      const education = JSON.parse(JSON.stringify(this.state.education));
-      const schools = education.schools;
+      const edu = JSON.parse(JSON.stringify(education));
+      const schools = edu.schools;
       schools.splice(index, 1);
-      this.setState({
-        education,
-      });
+      setEducation(edu);
     }
-  }
+  };
 
-  addOnClick(section) {
+  const addOnClick = (section) => {
     if(section === "experience") {
-      const experience = JSON.parse(JSON.stringify(this.state.experience));
-      const careers = experience.careers;
+      const exp = JSON.parse(JSON.stringify(experience));
+      const careers = exp.careers;
       const career = {
         company: "",
         position: "",
@@ -117,13 +103,11 @@ class App extends React.Component {
         details: "",
       };
       careers.push(career);
-      this.setState({
-        experience,
-      });
+      setExperience(exp);
     }
     else if(section === "education") {
-      const education = JSON.parse(JSON.stringify(this.state.education));
-      const schools = education.schools;
+      const edu = JSON.parse(JSON.stringify(education));
+      const schools = edu.schools;
       const school = {
         certification: "",
         school: "",
@@ -134,42 +118,32 @@ class App extends React.Component {
         details: "",
       };
       schools.push(school);
-      this.setState({
-        education,
-      });
+      setEducation(edu);
     }
-  }
+  };
 
-  handleButtonClick(e) {
-    this.setState({
-      isEditPage: !this.state.isEditPage,
-    });
-  }
-
-  render() {
-    return (
-      <div className="text-xl bg-zinc-50 dark:bg-zinc-700 ">
-        
-        <Header />
-        <div className="flex justify-center gap-6 pt-6 pb-6 pl-16 pr-16">
-         <EditPage 
-            handleInputChange={(e, section, index) => this.handleInputChange(e, section, index)}
-            deleteOnClick={(section, index) => this.deleteOnClick(section, index)}
-            addOnClick={(section) => this.addOnClick(section)}
-            personal = {this.state.personal}
-            experience = {this.state.experience}
-            education={this.state.education}
-          />
-          <PreviewPage 
-            personal = {this.state.personal}
-            experience = {this.state.experience}
-            education={this.state.education}
-          />
-        </div>
-        <Footer />
+  return (
+    <div className="text-xl bg-zinc-50 dark:bg-zinc-700 ">
+      
+      <Header />
+      <div className="flex justify-center gap-6 pt-6 pb-6 pl-16 pr-16">
+        <EditPage 
+          handleInputChange={(e, section, index) => handleInputChange(e, section, index)}
+          deleteOnClick={(section, index) => deleteOnClick(section, index)}
+          addOnClick={(section) => addOnClick(section)}
+          personal = {personal}
+          experience = {experience}
+          education={education}
+        />
+        <PreviewPage 
+          personal = {personal}
+          experience = {experience}
+          education={education}
+        />
       </div>
-    )
-  }
+      <Footer />
+    </div>
+  )
 }
 
 export default App;
